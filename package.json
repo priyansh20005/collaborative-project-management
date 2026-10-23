@@ -1,0 +1,27 @@
+{
+  "name": "collaborative-project-management",
+  "version": "1.0.0",
+  "description": "Build a multi-user collaborative project management platform where users with different roles can manage projects, tasks, team members and comments",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://localhost:26831/priyansh20005/collaborative-project-management"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "supertest": "^7.3.1"
+  }
+}
