@@ -1,10 +1,19 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const rateLimit = require('express-rate-limit');
 const { all, get, run, initDb } = require('./db');
 const { authenticate, requireGlobalRoles, signToken } = require('./auth');
 
 const app = express();
 app.use(express.json());
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 200,
+    standardHeaders: 'draft-8',
+    legacyHeaders: false,
+  })
+);
 
 function parsePagination(query) {
   const limit = Math.min(Math.max(Number(query.limit) || 20, 1), 100);
